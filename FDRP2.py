@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
+# external modules
 import pprint
 import json
 
+# my modules
 import DCC
 import get_url_word
+import config as cf
 
 FDRP2_coll = 'Collection-10071'
 # FDRP2_coll = 'Document-21380'
@@ -30,7 +33,7 @@ def print_check_perms(perm):
     return read_okay
 
 # Login to DCC
-s = DCC.login(DCC.dcc_url + DCC.dcc_login)
+s = DCC.login(cf.dcc_url + cf.dcc_login)
 
 #DCC.get_collections_in_collection(s, FDRP2_coll)
 doclist = DCC.get_files_in_collection(s, FDRP2_coll)
