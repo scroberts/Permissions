@@ -66,3 +66,15 @@ for doc in doclist:
         print("Review panel can access this document")
     else:
         print("!!! PERMISSIONS PROBLEM - Panel cannot access this document !!!")
+    
+    handle = doc
+    print('Getting info on Handle: ', handle)
+    info = DCC.get_basic_info(s,handle)
+    handle = info["handle"]
+    title = info["title"]
+    filename = info["filename"]
+
+    print('Downloading [title, handle, filename]:', title, handle, filename)
+    r = DCC.get_file(s, handle, cf.dccfilepath, filename)
+    print(r.status_code)
+
