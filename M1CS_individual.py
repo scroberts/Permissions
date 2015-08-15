@@ -6,8 +6,7 @@
 import PERM
 
 # Define the top level collection or document to check
-target = 'Collection-10071'
-# target = 'Document-21380'
+target = 'Collection-10725'
 
 # Define a list data structure of users or groups in sets that are
 # acceptable if they have read permission to the collections and files
@@ -21,11 +20,15 @@ target = 'Collection-10071'
 #     	permissions are considered okay)
 
 sys_eng_read = 'Group-325'
-ext_panel = 'Group-574'
-int_panel = 'Group-576'
-obs_panel = 'Group-577'
+ext_panel = 'Group-639'
+int_panel = 'Group-640'
+obs_panel = 'Group-641'
 
-permissions = [{sys_eng_read : 'R'},{ext_panel : 'R', int_panel : 'RW', obs_panel : 'R'}]
+acm_user = 'User-1054'  # Amanda Cuetto-Moll
+ks_user = 'User-138'    # Kei Szeto
+tc_user = 'User-1165'   # Tomas Chylek
+
+permissions = [{acm_user : ''}, {ks_user : ''}, {tc_user : ''}]
 
 # Now call the checkPerms function
 PERM.checkPerms(target, permissions)
