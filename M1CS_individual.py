@@ -31,4 +31,4 @@ tc_user = 'User-1165'   # Tomas Chylek
 permissions = [{acm_user : ''}, {ks_user : ''}, {tc_user : ''}]
 
 # Now call the checkPerms function
-PERM.checkPerms(target, permissions)
+[passList,failList] = PERM.checkPerms(target, permissions)
