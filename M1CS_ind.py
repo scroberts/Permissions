@@ -6,7 +6,7 @@
 import PERM
 import DCC
 import Config as CF
-import myutil
+import MyUtil
 
 # Define the top level collection or document to check
 target = 'Collection-10725'
@@ -51,20 +51,20 @@ for handle in passList:
         fd = DCC.prop_get(s, handle, InfoSet = 'DocBasic')
         DCC.print_doc_basic(fd)
         perm = DCC.prop_get(s, handle, InfoSet = 'Perms')
-        perm = myutil.remove_dict_from_list(perm,'handle', ks_user)
+        perm = MyUtil.remove_dict_from_list(perm,'handle', ks_user)
         print('After: ')
         DCC.print_perm(perm)
     elif 'Collection' in handle:
         fd = DCC.prop_get(s, handle, InfoSet = 'CollData')
         DCC.print_coll_data(fd)
         perm = fd['permissions']
-        fd = myutil.remove_dict_from_list(perm,'handle', ks_user)
+        fd = MyUtil.remove_dict_from_list(perm,'handle', ks_user)
         print('After: ')
         DCC.print_perm(perm)
 
     else:
         print('Not Document or Collection')
 
-    if myutil.get_yn('Change Permissions (Y/N)?'):
+    if MyUtil.get_yn('Change Permissions (Y/N)?'):
         print('Changing permissions...')
         DCC.set_permissions(s, handle, perm)
