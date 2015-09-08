@@ -49,20 +49,19 @@ s = DCC.login(CF.dcc_url + CF.dcc_login)
 for handle in passList:
     print('\n\n')
     if 'Document' in handle:
-        fd = DCC.prop_get(s, handle, InfoSet = 'DocBasic')
-        DCC.print_doc_basic(fd)
-        perm = DCC.prop_get(s, handle, InfoSet = 'Perms')
-        DCC.print_perm(perm)
+        fd = DCC.prop_get(s, handle, InfoSet = 'DocBasic', Print = True)
+        perm = DCC.prop_get(s, handle, InfoSet = 'Perms', Print = True)
         perm = MyUtil.remove_dict_from_list(perm,'handle', check_user)
         print('After: ')
-        DCC.print_perm(perm)
+        DCC.print_perms(perm)
     elif 'Collection' in handle:
-        fd = DCC.prop_get(s, handle, InfoSet = 'CollData')
-        DCC.print_coll_data(fd)
-        perm = fd['permissions']
+        fd = DCC.prop_get(s, handle, InfoSet = 'CollData', Print = True)
+        perm = DCC.prop_get(s, handle, InfoSet = 'Perms', Print = True)
+#         DCC.print_coll_data(fd)
+#         perm = fd['permissions']
         fd = MyUtil.remove_dict_from_list(perm,'handle', check_user)
         print('After: ')
-        DCC.print_perm(perm)
+        DCC.print_perms(perm)
 
     else:
         print('Not Document or Collection')

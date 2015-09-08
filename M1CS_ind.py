@@ -53,14 +53,14 @@ for handle in passList:
         perm = DCC.prop_get(s, handle, InfoSet = 'Perms')
         perm = MyUtil.remove_dict_from_list(perm,'handle', ks_user)
         print('After: ')
-        DCC.print_perm(perm)
+        DCC.print_perms(perm)
     elif 'Collection' in handle:
         fd = DCC.prop_get(s, handle, InfoSet = 'CollData')
         DCC.print_coll_data(fd)
         perm = fd['permissions']
         fd = MyUtil.remove_dict_from_list(perm,'handle', ks_user)
         print('After: ')
-        DCC.print_perm(perm)
+        DCC.print_perms(perm)
 
     else:
         print('Not Document or Collection')
