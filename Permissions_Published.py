@@ -7,10 +7,17 @@ import Tree
 import PERM
 
 collhandle = 'Collection-8279'
+collhandle = 'Collection-9895'
+collhandle = 'Collection-8288'
+collhandle = 'Collection-8711'
+collhandle = 'Collection-9908'
+collhandle = 'Collection-9889'
 
 actions = [ {'Criteria' : {'HandlePattern' : 'User-', 'Read' : True, 'Write' : False, 'Manage' : False}, 'Action' : 'Remove'},
-            {'Criteria' : {'HandlePattern' : 'Group-', 'Read' : True, 'Write' : False, 'Manage' : False}, 'Exclude' : ['Group-325'], 'Action' : 'Remove'},
-            {'Criteria' : {'Read' : False, 'Write' : False, 'Manage' : False}, 'Action' : 'Remove'},
+            {'Criteria' : {'HandlePattern' : 'Group-', 'Read' : True, 'Write' : False, 'Manage' : False}, 'Exclude' : ['Group-325', 'Group-4'], 'Action' : 'Remove'},
+            {'Criteria' : {'Read' : False, 'Write' : False, 'Manage' : False} ,'Exclude':['Group-4'], 'Action' : 'Remove'},
+            {'Criteria' : {'Read' : False, 'Write' : True, 'Manage' : False} ,'Exclude':['Group-4'], 'Action' : 'Remove'},
+            {'Criteria' : {'Read' : False, 'Write' : False, 'Manage' : True} ,'Exclude':['Group-4'], 'Action' : 'Remove'},
             {'Criteria' : {'HandleMatches' : 'Group-4'}, 'Action' : 'Remove'},
             {'Criteria' : {'HandleMatches' : 'Group-536'}, 'Action' : 'Remove'},
             {'Criteria' : {'HandleMatches' : 'User-1083'}, 'Action' : 'Remove'},
