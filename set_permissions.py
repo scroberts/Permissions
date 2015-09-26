@@ -18,8 +18,8 @@ def main():
     s = DCC.login(CF.dcc_url + CF.dcc_login) 
     
     #****** SET Flag for asking about changes ******
-#     ask_flag = False
-    ask_flag = True
+    ask_flag = False
+#     ask_flag = True
     
     #****** Choose SET ******
 #     set = PERM_DEFS.SET_M1CS_PDR
@@ -27,7 +27,8 @@ def main():
 #     set = PERM_DEFS.SET_SE_READERSHIP    
 #     set = PERM_DEFS.SET_IRIS_REMOVEUSERS_1
 #     set = PERM_DEFS.SET_IRIS_REMOVE_MATTHIAS_MANAGE_FALSE
-    set = PERM_DEFS.SET_IRIS_REMOVE_ISBRUCKER
+#     set = PERM_DEFS.SET_IRIS_REMOVE_ISBRUCKER
+    set = PERM_DEFS.SET_REPLACE_IRIS_EAR_WITH_ALL
     
     #****** Choose Collection ******
 #     m1cs_pdr_root = 'Collection-10725'
@@ -37,8 +38,9 @@ def main():
 #     config_control = 'Collection-8277'
 #     handle = config_control
 
-    IRIS_science = 'Collection-7542'
-    handle = IRIS_science
+#     IRIS_science = 'Collection-7542'
+    IRIS = 'Collection-2463'
+    handle = IRIS
     
     #******!!!  Run !!! ******
 #     print(set)
